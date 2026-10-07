@@ -1,4 +1,10 @@
 const translations = {
+  "Pequeños personajes. Grandes aventuras.": "Small characters. Big adventures.",
+  "Proyecto anterior": "Previous project",
+  "Proyecto siguiente": "Next project",
+  "Seleccionar proyecto": "Select project",
+  "Pausar carrusel": "Pause slideshow",
+  "Reanudar carrusel": "Resume slideshow",
   "Saltar al contenido": "Skip to content",
   "Menú": "Menu",
   "Nuestros juegos": "Our games",
