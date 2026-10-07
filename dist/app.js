@@ -15,7 +15,7 @@ games.forEach((game, index) => {
   img.height = 1300;
   const label = document.createElement('span');
   label.className = 'card-tag';
-  label.textContent = 'UNIVERSO RATIKA';
+  label.textContent = 'RATIKA GAMES';
   artwork.append(img, label);
   const info = document.createElement('div');
   info.className = 'card-info';
