@@ -7,9 +7,9 @@ const heroProjects = [
 const hero = document.querySelector('.hero-banner');
 const slideContainer = hero.querySelector('.hero-slides');
 const dotContainer = hero.querySelector('.hero-dots');
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
 let currentHero = 0;
-let heroPaused = reducedMotion.matches;
+
 let heroTimer;
 
 // Fit the visible artwork without changing the original transparent PNG files.
@@ -67,7 +67,7 @@ heroProjects.forEach((project, index) => {
 
 function scheduleHero() {
   clearTimeout(heroTimer);
-  if (!heroPaused && !document.hidden && !hero.matches(':hover') && !hero.contains(document.activeElement)) {
+  if (!document.hidden) {
     heroTimer = setTimeout(() => selectHero(currentHero + 1), 7000);
   }
 }
@@ -80,19 +80,7 @@ function selectHero(index) {
   });
   scheduleHero();
 }
-const pauseButton = hero.querySelector('.hero-pause');
-function updatePauseButton() {
-  pauseButton.textContent = heroPaused ? '▶' : 'Ⅱ';
-  pauseButton.setAttribute('aria-label', heroPaused ? 'Reanudar carrusel' : 'Pausar carrusel');
-  window.resetLanguageAttributes?.(pauseButton); window.applyLanguage?.();
-}
-pauseButton.addEventListener('click', () => { heroPaused = !heroPaused; updatePauseButton(); scheduleHero(); });
 hero.querySelector('.hero-prev').addEventListener('click', () => selectHero(currentHero - 1));
 hero.querySelector('.hero-next').addEventListener('click', () => selectHero(currentHero + 1));
-hero.addEventListener('mouseenter', () => clearTimeout(heroTimer));
-hero.addEventListener('mouseleave', scheduleHero);
-hero.addEventListener('focusin', () => clearTimeout(heroTimer));
-hero.addEventListener('focusout', () => setTimeout(scheduleHero, 0));
 document.addEventListener('visibilitychange', scheduleHero);
-reducedMotion.addEventListener('change', () => { heroPaused = reducedMotion.matches; updatePauseButton(); scheduleHero(); });
-updatePauseButton(); scheduleHero();
+scheduleHero();
