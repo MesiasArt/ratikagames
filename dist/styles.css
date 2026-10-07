@@ -28,3 +28,5 @@
 .ticker{background:#ffcf00;color:#114db7;border:0}
 .header{background:#ffcf00;color:#114db7}.header nav a{color:#114db7}.header nav a:hover{color:#b5142b}.header .nav-cta{border-color:#114db7}.header .menu-toggle{color:#114db7;border-color:#114db7}
 @media(max-width:700px){.header nav{background:#ffcf00;color:#114db7;border-color:#114db7}}
+.discord-button:disabled{opacity:.8;transform:none;cursor:default}.discord-pending{display:inline-block;margin-left:14px;font-size:13px;color:#fff3bd}
+@media(max-width:400px){.discord-pending{display:block;margin:10px 0 0}}
