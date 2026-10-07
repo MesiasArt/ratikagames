@@ -37,6 +37,7 @@ games.forEach((game, index) => {
     const image = document.querySelector('#dialog-image');
     image.src = game.image;
     image.alt = `Ilustración de ${game.title}`;
+    window.resetLanguageAttributes?.(image);
     const store = document.querySelector('#dialog-store');
     let safeUrl = '';
     try { const url = new URL(game.storeUrl); if (url.protocol === 'https:') safeUrl = url.href; } catch {}
@@ -44,6 +45,7 @@ games.forEach((game, index) => {
     store.textContent = game.storeLabel || 'Visitar página del juego';
     if (safeUrl) store.href = safeUrl; else store.removeAttribute('href');
     document.querySelector('#dialog-pending').hidden = Boolean(safeUrl);
+    window.applyLanguage?.();
     dialog.showModal();
     document.body.classList.add('modal-open');
   });
@@ -60,7 +62,7 @@ navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', 
 document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
 const video = document.querySelector('#ratika-video');
 const videoToggle = document.querySelector('#video-toggle');
-videoToggle.addEventListener('click', async () => { if (video.paused) { try { await video.play(); } catch { videoToggle.textContent = 'Reintentar animación'; } } else video.pause(); });
-video.addEventListener('play', () => { videoToggle.textContent = 'Pausar animación'; });
-video.addEventListener('pause', () => { videoToggle.textContent = 'Reproducir animación'; });
+videoToggle.addEventListener('click', async () => { if (video.paused) { try { await video.play(); } catch { videoToggle.textContent = 'Reintentar animación'; window.applyLanguage?.(); } } else video.pause(); });
+video.addEventListener('play', () => { videoToggle.textContent = 'Pausar animación'; window.applyLanguage?.(); });
+video.addEventListener('pause', () => { videoToggle.textContent = 'Reproducir animación'; window.applyLanguage?.(); });
 document.querySelector('#year').textContent = new Date().getFullYear();
