@@ -65,3 +65,9 @@
 .universe-landscape .banner-video video{flex:1;min-height:0;height:0}
 .universe-landscape .banner-video>span{flex-shrink:0}
 @media(max-width:700px){.universe-landscape .landscape-content{padding-block:28px;gap:24px}.universe-landscape .landscape-copy{padding-block:0;align-self:start}.universe-landscape .banner-video{width:100%;height:auto}.universe-landscape .banner-video video{flex:none;height:300px}}
+/* Community copy and shading on the right. */
+.studio-landscape .landscape-content{justify-content:flex-end}
+.studio-landscape .landscape-copy{text-align:right}
+.studio-landscape .landscape-copy>p:not(.eyebrow){margin-left:auto}
+.studio-landscape::after{background:linear-gradient(270deg,#041c4cf7 0%,#041c4cdb 30%,#041c4c70 58%,#041c4c18 100%)}
+@media(max-width:700px){.studio-landscape .landscape-content{align-items:flex-end}.studio-landscape::after{background:linear-gradient(270deg,#041c4cef,#041c4c98 65%,#041c4c50)}}
