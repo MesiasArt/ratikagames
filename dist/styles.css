@@ -30,3 +30,5 @@
 @media(max-width:700px){.header nav{background:#ffcf00;color:#114db7;border-color:#114db7}}
 .discord-button:disabled{opacity:.8;transform:none;cursor:default}.discord-pending{display:inline-block;margin-left:14px;font-size:13px;color:#fff3bd}
 @media(max-width:400px){.discord-pending{display:block;margin:10px 0 0}}
+.boyscout-art.boyscout-banner-art{padding:0;display:flex;background:#ffeb4c;min-height:0;overflow:hidden}.boyscout-art.boyscout-banner-art img{width:100%;max-width:none;height:100%;object-fit:contain;margin:0}.boyscout-copy .genre-tags{justify-content:flex-start;margin:0 0 20px;gap:8px}.boyscout-copy .genre-tags span{border-color:#96b5e766;color:#c7dafa}
+@media(max-width:700px){.boyscout-art.boyscout-banner-art{aspect-ratio:16/9}.boyscout-art.boyscout-banner-art img{height:auto;object-fit:contain}}
