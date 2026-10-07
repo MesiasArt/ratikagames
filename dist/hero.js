@@ -68,7 +68,7 @@ heroProjects.forEach((project, index) => {
 function scheduleHero() {
   clearTimeout(heroTimer);
   if (!document.hidden) {
-    heroTimer = setTimeout(() => selectHero(currentHero + 1), 7000);
+    heroTimer = setTimeout(() => selectHero(currentHero + 1), 4000);
   }
 }
 function selectHero(index) {
