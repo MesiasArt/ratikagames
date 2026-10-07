@@ -41,6 +41,7 @@ games.forEach((game, index) => {
     let safeUrl = '';
     try { const url = new URL(game.storeUrl); if (url.protocol === 'https:') safeUrl = url.href; } catch {}
     store.hidden = !safeUrl;
+    store.textContent = game.storeLabel || 'Visitar página del juego';
     if (safeUrl) store.href = safeUrl; else store.removeAttribute('href');
     document.querySelector('#dialog-pending').hidden = Boolean(safeUrl);
     dialog.showModal();
