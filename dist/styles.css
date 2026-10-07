@@ -58,3 +58,10 @@
 @media(prefers-reduced-motion:reduce){.hero-slide{transition:none}.hero-slide.is-active .hero-characters,.hero-slide.is-active .hero-project-logo,.hero-slide.is-active .hero-project-copy>.button{animation:none;transform:none;opacity:1}}
 .hero-characters{width:min(57%,calc(clamp(520px,42vw,760px) * .94 * var(--art-ratio,1)));max-height:none}
 @media(max-width:700px){.hero-characters{width:min(96%,calc(690px * .55 * var(--art-ratio,1)));max-height:none}}
+/* Give the animation panel nearly the full height of its banner. */
+.universe-landscape .landscape-content{min-height:437px;padding-block:18px;align-items:stretch}
+.universe-landscape .landscape-copy{align-self:center;padding-block:24px}
+.universe-landscape .banner-video{width:40%;height:401px;display:flex;flex-direction:column;align-self:center}
+.universe-landscape .banner-video video{flex:1;min-height:0;height:0}
+.universe-landscape .banner-video>span{flex-shrink:0}
+@media(max-width:700px){.universe-landscape .landscape-content{padding-block:28px;gap:24px}.universe-landscape .landscape-copy{padding-block:0;align-self:start}.universe-landscape .banner-video{width:100%;height:auto}.universe-landscape .banner-video video{flex:none;height:300px}}
